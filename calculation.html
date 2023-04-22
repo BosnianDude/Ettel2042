@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Calculator</h1>
+	
+	<h2>Calculate the Difference between Numbers in %</h2>
+	<label for="number1">Number 1:</label>
+	<input type="number" id="number1" name="number1"><br><br>
+	
+	<label for="number2">Number 2:</label>
+	<input type="number" id="number2" name="number2"><br><br>
+	
+	<button onclick="calculateDifference()">Calculate Difference</button>
+	
+	<p id="differenceResult"></p>
+	
+	<script>
+		function calculateDifference() {
+			var number1 = document.getElementById("number1").value;
+			var number2 = document.getElementById("number2").value;
+			
+			var difference = ((number1 - number2) / ((number1 + number2) / 2)) * 100;
+			
+			document.getElementById("differenceResult").innerHTML = "The difference between " + number1 + " and " + number2 + " is " + difference.toFixed(2) + "%";
+		}
+	</script>
+	
+	<h2>Calculate the % of a Number</h2>
+	<label for="number3">Number:</label>
+	<input type="number" id="number3" name="number3"><br><br>
+	
+	<label for="number4">Percentage:</label>
+	<input type="number" id="number4" name="number4"><br><br>
+	
+	<button onclick="calculatePercentage()">Calculate Percentage</button>
+	
+	<p id="percentageResult"></p>
+	
+	<script>
+		function calculatePercentage() {
+			var number3 = document.getElementById("number3").value;
+			var number4 = document.getElementById("number4").value;
+			
+			var percentage = (number4 / 100) * number3;
+			
+			document.getElementById("percentageResult").innerHTML = number4 + "% of " + number3 + " is " + percentage.toFixed(2);
+		}
+	</script>
+	
+	
+	<h2>Calculate Population Change based on Fertility Rate</h2>
+	<label for="currentPop">Current Population:</label>
+	<input type="number" id="currentPop" name="currentPop"><br><br>
+	
+	<label for="fertilityRate">Fertility Rate:</label>
+	<input type="number" id="fertilityRate" name="fertilityRate"><br><br>
+	
+	<label for="years">Years:</label>
+	<input type="number" id="years" name="years"><br><br>
+	
+	<button onclick="calculatePopulation()">Calculate Population</button>
+	
+	<p id="populationResult"></p>
+	
+	<script>
+		function calculatePopulation() {
+			var currentPop = document.getElementById("currentPop").value;
+			var fertilityRate = document.getElementById("fertilityRate").value;
+			var years = document.getElementById("years").value;
+			
+			var populationChange = currentPop * Math.pow((1 + fertilityRate/100), years);
+			
+			document.getElementById("populationResult").innerHTML = "The projected population after " + years + " years is " + populationChange.toFixed(0);
+		}
+	</script>
+      </table>
+     
